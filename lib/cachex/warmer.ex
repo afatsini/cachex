@@ -110,7 +110,7 @@ defmodule Cachex.Warmer do
         :erlang.send_after(interval(), self(), :cachex_warmer)
 
         # repeat with the state
-        {:noreply, process_state}
+        {:noreply, process_state, :hibernate}
       end
     end
   end
